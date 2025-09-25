@@ -7,7 +7,7 @@ import ShopPage from "../layout";
 import { ShopPageProps } from '@/types/props/ShopPageProps';
 import { use } from "react";
 import ShopHeaderV2 from "@/components/ShopHeaderV2";
-import { ImageHeaderV2 } from "@/components/ImageHeader";
+import { ImageHeader, ImageHeaderV2 } from "@/components/ImageHeader";
 
 
 export default function FeedbackPagePage({ params }: ShopPageProps) {
@@ -15,7 +15,8 @@ export default function FeedbackPagePage({ params }: ShopPageProps) {
 	const slug = resolvedParams.slug;
 
 	return (
-		<div className="flex flex-col items-center gap-8 mt-32">
+		<div className="flex flex-col items-center gap-8">
+			<ImageHeader marginTop={8} />
 			<ShopHeaderV2 />
 			<CustomerFeedbackTextForm slug={slug} />
 		</div>

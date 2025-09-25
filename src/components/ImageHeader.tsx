@@ -26,7 +26,7 @@ export function ImageHeader({
 
 	// --- Class Name Composition ---
 	const containerClasses = cn(
-		'relative overflow-hidden rounded-xl w-96 h-64', // Fill width, fixed reasonable height
+		'relative overflow-hidden rounded-xl w-32 h-32', // Fill width, fixed reasonable height
 		`mt-${marginTop}`
 	);
 

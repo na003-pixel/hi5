@@ -21,18 +21,18 @@ export default function GoogleReviewsCard() {
 
 	return (
 		<>
-			<Card className="p-6 text-center flex flex-col">
+			<Card className="py-2 px-10 text-center flex flex-col mx-auto">
 				<CardHeader>
-					<CardTitle className="text-xl font-semibold text-white">
+					<CardTitle className="text-xl font-semibold">
 						One last step
 					</CardTitle>
 				</CardHeader>
 
 				<CardContent>
-					<div className="w-full flex flex-col items-center space-y-6">
+					<div className="py-4 mx-auto mt-2 items-center space-y-6">
 						<Link
 							href={`${reviewHref}`}
-							className="w-full p-6 text-center rounded-xl font-semibold transition border border-neutral-800 hover:bg-neutral-800"
+							className="w-full py-6 px-10 text-center rounded-xl font-semibold transition border border-border hover:bg-accent hover:text-accent-foreground"
 						>
 							Rate us on Google!
 						</Link>

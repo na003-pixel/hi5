@@ -55,15 +55,17 @@ export default function CustomerFeedbackTextForm({ slug }: { slug: string }) {
 
 
 	return (
-		<Card className="w-full max-w-sm mx-auto" style={
-			{
-				backgroundColor: 'lab(7.78201% -0.0000149012 0)'
+		<Card
+		className="w-full max-w-sm mx-auto"
+		// style={
+		// 	{
+		// 		backgroundColor: 'lab(7.78201% -0.0000149012 0)'
 
-			}
-		}
+		// 	}
+		// }
 		>
 			<CardHeader className="text-left pb-4">
-				<CardTitle className="text-xl font-semibold text-white">
+				<CardTitle className="text-xl font-semibold">
 					What did you love about us?
 				</CardTitle>
 			</CardHeader>

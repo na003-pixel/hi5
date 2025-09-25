@@ -2,13 +2,9 @@
 
 import { use, useEffect } from 'react';
 import { useAppDispatch } from '@/store/hooks';
-import { fetchShop } from '@/store/shop/slice';
-import ShopHeader from '@/components/ShopHeader';
 import { CustomerFeedbackRatingFormV2 } from '@/components/CustomerFeedbackRatingFormV2';
 import { ShopPageProps } from '@/types/props/ShopPageProps';
 import ShopHeaderV2 from '@/components/ShopHeaderV2';
-import { Link } from 'lucide-react';
-import ShopHeaderV5 from '@/components/ShopHeaderV5';
 import { ImageHeader, ImageHeaderV2 } from '@/components/ImageHeader';
 
 
@@ -26,7 +22,7 @@ export default function ShopLandingPage({ params }: ShopPageProps) {
 
 	return (
 		// <div className="flex flex-col items-center gap-8">
-		<div className='flex flex-col items-center gap-8 mt-32"'>
+		<div className='flex flex-col items-center gap-8'>
 			<ImageHeader marginTop={8} />
 
 			{/* <ImageHeaderV2 fill={true} /> */}

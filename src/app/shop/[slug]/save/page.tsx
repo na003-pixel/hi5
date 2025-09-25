@@ -5,7 +5,7 @@ import SaveToDB from "@/components/Save";
 export default function SavePagePage() {
 	return (
 
-		<div className="flex flex-col items-center gap-8 mt-32">
+		<div className="flex flex-col items-center gap-8">
 			<SaveToDB />
 		</div>
 	);

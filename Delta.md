@@ -6,7 +6,7 @@ This reperesents all delta from a known commit/reference to the latest/then late
 ## Ratings page
 ## Text Page
 ## Sign in page
-## Sve page
+## Save page
 ## Review page
 
 
@@ -15,15 +15,21 @@ This reperesents all delta from a known commit/reference to the latest/then late
 ## Architecture
 - Migrated all headers to use `ShopHeaderV2`
 - Better prompts: more personalized, better structure
+- Improved consistently in styling and shop header used
+- Removed hardcoded colors styling from many places
+- Removed unused imports from many places
 ## Ratings page
 - [ROLLBACK] Made auto-submit on selecting rating using `useEffect`
 - [ROLLBACK] Hidden submit button
 - Added owner name below main heading
-- Added custom image above shop text header. Use `ImageHeader`
-- Explored custom layout for (images+form). Its of split screen kind 1:2 split in horizontal dir. Use image header `ImageHeaderV2`
+- Added custom image above shop text header. For all pages. Use `ImageHeader`. Fixed size to 32x32.
+- Experimented custom layout for (images+form). Its of split screen kind 1:2 split in horizontal dir. Use image header `ImageHeaderV2`
 - Auto-center main ratings form
 ## Text Page
 - Auto-center main text form
+- Removed hardcoded colors styling
 ## Sign in page
-## Sve page
+## Save page
+- Removed excess margin from top
 ## Review page
+- Refined styling for a better more aesthetic look
