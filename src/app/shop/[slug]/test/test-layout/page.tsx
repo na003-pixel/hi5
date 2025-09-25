@@ -8,10 +8,7 @@ import { ShopPageProps } from '@/types/props/ShopPageProps';
 import ShopHeaderV2 from '@/components/ShopHeaderV2';
 import { ImageHeader, ImageHeaderV2 } from '@/components/ImageHeader';
 
-// Unused imports from original code - can be removed
-// import ShopHeader from '@/components/ShopHeader';
-// import { Link } from 'lucide-react';
-// import ShopHeaderV5 from '@/components/ShopHeaderV5';
+
 
 export default function ShopLandingPage({ params }: ShopPageProps) {
 	const dispatch = useAppDispatch();
@@ -68,29 +65,14 @@ export default function ShopLandingPage({ params }: ShopPageProps) {
 	// Use fallback dimensions during SSR, actual dimensions after hydration
 	imgsize = mounted ? dimensions : { width: 1200, height: 675 };
 
-	// imgsize = getOptimalImageSize();
-
-
-
-	// useEffect(() => {
-	// 	if (slug) {
-	// 		dispatch(fetchShop(slug));
-	// 	}
-	// }, [dispatch, slug]);
 
 	return (
-		// Main container for the two-pane layout
-		// - Stacks vertically on mobile (grid-cols-1)
-		// - Becomes a 3-column grid on medium screens and up (md:grid-cols-3)
-		// - Adds padding and a gap between panes
 		<div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 md:p-8 min-h-screen">
-			{/* LEFT PANE: Takes 1 of 3 columns on medium screens and up */}
 			<div className="md:col-span-1 flex flex-col gap-8">
 				<ShopHeaderV2 />
 				<CustomerFeedbackRatingFormV2 slug={slug} />
 			</div>
 
-			{/* RIGHT PANE: Takes 2 of 3 columns on medium screens and up */}
 			<div className="md:col-span-2">
 				<ImageHeaderV2 fill={true} />
 			</div>

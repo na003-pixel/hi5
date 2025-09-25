@@ -3,6 +3,7 @@ This reperesents all delta from a known commit/reference to the latest/then late
 
 # Draft
 # Date
+# Architecture
 ## Ratings page
 ## Text Page
 ## Sign in page
@@ -15,7 +16,7 @@ This reperesents all delta from a known commit/reference to the latest/then late
 ## Architecture
 - Migrated all headers to use `ShopHeaderV2`
 - Better prompts: more personalized, better structure
-- Improved consistently in styling and shop header used
+- Improved consistently in styling and components (shop text headers more specifically) used
 - Removed hardcoded colors styling from many places
 - Removed unused imports from many places
 ## Ratings page
@@ -33,3 +34,16 @@ This reperesents all delta from a known commit/reference to the latest/then late
 - Removed excess margin from top
 ## Review page
 - Refined styling for a better more aesthetic look
+
+
+
+# 26 Sept 2025
+# Architecture
+- Built a dynamic generic classic/tailwind CSS styles generator
+- Built an image generation engine with declarative easy-to-use props/interface and highly customizable internal CSS styling. Ships with sane defaults
+- Replicated split screen layout with image+content, this time with vastly greater flexibility in genreatng image
+## Ratings page
+## Text Page
+## Sign in page
+## Save page
+## Review page
