@@ -41,7 +41,7 @@ This reperesents all delta from a known commit/reference to the latest/then late
 # Architecture
 - Built a dynamic generic classic/tailwind CSS styles generator
 - Built an image generation engine with declarative easy-to-use props/interface and highly customizable internal CSS styling. Ships with sane defaults
-- Replicated split screen layout with image+content, this time with vastly greater flexibility in genreatng image
+- Replicated split screen layout with image+content, this time with vastly greater flexibility in generating image
 ## Ratings page
 ## Text Page
 ## Sign in page

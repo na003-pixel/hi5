@@ -1,3 +1,4 @@
+import React from "react";
 import { AspectRatioConfig, DisplaySizeConfig, ImageSizeConfig } from "../styling/Images";
 import { SpacingConfig } from "../styling/Spacing";
 
@@ -6,6 +7,7 @@ export interface ImageStylingProps {
 	displaySize?: DisplaySizeConfig;  // How big the component appears
 	imageSize?: ImageSizeConfig;      // Intrinsic image dimensions for Next.js
 	fill?: boolean;
+	heightFillStrategy?: "screen" | "full" | string;
 
 	// Spacing configuration
 	margin?: SpacingConfig;
@@ -27,4 +29,7 @@ export interface ImageStylingProps {
 
 	// Additional styling
 	className?: string;
+
+	divStyles?: React.CSSProperties;
+	elemStyles?: React.CSSProperties;
 }

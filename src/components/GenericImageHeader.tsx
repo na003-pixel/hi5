@@ -32,6 +32,7 @@ export function GenericImageHeader({
 	displaySize,
 	imageSize,
 	fill = false,
+	heightFillStrategy = "screen",
 	margin,
 	padding,
 	aspectRatio,
@@ -40,7 +41,9 @@ export function GenericImageHeader({
 	src,
 	alt,
 	priority = false,
-	className
+	className,
+	divStyles,
+	elemStyles,
 }: ImageStylingProps) {
 	// --- Data Logic ---
 	const shop = useAppSelector(selectShopItem);
@@ -50,12 +53,20 @@ export function GenericImageHeader({
 	// --- Sizing Strategy Logic ---
 	const getSizingStrategy = () => {
 		if (fill) {
-			const heightClass = aspectRatio ? '' : 'h-screen';
+			let needsMinHeightVar = false;
 
+			if (!aspectRatio) {
+				if (heightFillStrategy === "h-screen" || (heightFillStrategy === "h-full")) {
+					needsMinHeightVar = true;
+				}
+				else {
+					needsMinHeightVar = false;
+				}
+			}
 			return {
-				containerSizing: `w-full ${heightClass}`.trim(),
+				containerSizing: `w-full ${heightFillStrategy}`.trim(),
 				imageStrategy: 'fill',
-				needsMinHeight: true
+				needsMinHeight: needsMinHeightVar
 			};
 		}
 
@@ -85,7 +96,6 @@ export function GenericImageHeader({
 			'relative overflow-hidden',
 			sizingStrategy.containerSizing,
 			buildRoundingClasses(rounded),
-			buildAspectRatioClasses(aspectRatio)
 		];
 
 		if (aspectRatio) {
@@ -117,6 +127,17 @@ export function GenericImageHeader({
 
 	const containerStyles = buildMarginStyles(margin);
 	const contentStyles = buildPaddingStyles(padding);
+
+
+	const completeDivStyles = {
+		...containerStyles,
+		...divStyles,
+	}
+
+	const completeElemStyles = {
+		...contentStyles,
+		...elemStyles,
+	}
 
 	// console.log(containerClasses);
 
@@ -180,11 +201,11 @@ export function GenericImageHeader({
 	const imageView = (
 		<Card
 			className={containerClasses}
-			style={containerStyles}
+			style={completeDivStyles}
 		>
 			<CardContent
 				className={contentClasses}
-				style={contentStyles}
+				style={completeElemStyles}
 			>
 				<Image {...imageConfig} />
 			</CardContent>
