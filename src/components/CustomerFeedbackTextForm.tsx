@@ -29,7 +29,7 @@ export default function CustomerFeedbackTextForm({ slug }: { slug: string }) {
 	const isValidLength = useAppSelector(selectIsValidLength);
 	const isSubmitting = useAppSelector(selectIsSubmitting);
 	const shopItem = useAppSelector(selectShopItem);
-	const shopState = useAppSelector (selectShopState);
+	const shopState = useAppSelector(selectShopState);
 	const router = useRouter();
 
 	const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -37,6 +37,7 @@ export default function CustomerFeedbackTextForm({ slug }: { slug: string }) {
 	};
 
 	const handleEnhance = () => {
+		// console.log(isValidLength, isSubmitting);
 		if (isValidLength && !isEnhancing) {
 			// dispatch(setIsEnhancing (true));
 			dispatch(enhanceFeedback(originalText ?? "The service was excellent"));
@@ -46,15 +47,21 @@ export default function CustomerFeedbackTextForm({ slug }: { slug: string }) {
 	const handleSubmit = async () => {
 		// console.log(feedback);
 		console.log(shopState);
-		sessionStorage.setItem ("feedback", JSON.stringify (feedback));
-		sessionStorage.setItem ("shop", JSON.stringify (shopState));
+		sessionStorage.setItem("feedback", JSON.stringify(feedback));
+		sessionStorage.setItem("shop", JSON.stringify(shopState));
 		console.log('[SUBMITTED] Feedback Text');
 		router.push(`/shop/${slug}/save`);
 	};
 
 
 	return (
-		<Card className="w-full max-w-sm" style={{ backgroundColor: 'lab(7.78201% -0.0000149012 0)' }}>
+		<Card className="w-full max-w-sm mx-auto" style={
+			{
+				backgroundColor: 'lab(7.78201% -0.0000149012 0)'
+
+			}
+		}
+		>
 			<CardHeader className="text-left pb-4">
 				<CardTitle className="text-xl font-semibold text-white">
 					What did you love about us?

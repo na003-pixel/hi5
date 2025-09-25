@@ -20,7 +20,7 @@ export default function GenericForm<TValue extends string | number>({
 	const options = Object.keys(labels) as TValue[];
 
 	return (
-		<Card className="w-full max-w-sm">
+		<Card className="w-full max-w-sm mx-auto">
 			<CardHeader>
 				<CardTitle className="text-left">{title}</CardTitle>
 				<CardDescription>{description}</CardDescription>

@@ -159,6 +159,11 @@ const feedbackSlice = createSlice({
 			state.Error = null;
 			state.Item = null;
 		},
+		resetFeedbackState(state) {
+			state.SelectedRating = null;
+			state.IsSubmitting = false;
+			state.Error = null;
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -198,5 +203,5 @@ const feedbackSlice = createSlice({
 	},
 });
 
-export const { setRating, setIsEnhancing, setFeedbackText, setOriginalText, setAiRefinedText, clearError, resetForm } = feedbackSlice.actions;
+export const { setRating, setIsEnhancing, setFeedbackText, setOriginalText, setAiRefinedText, clearError, resetForm, resetFeedbackState } = feedbackSlice.actions;
 export default feedbackSlice.reducer;
