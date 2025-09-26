@@ -5,32 +5,6 @@ import { Shop, ShopRecordInDB, ShopV2 } from "@/types/primitives/Shop";
 
 
 
-export async function getServerStoreForShop(slug: string) {
-	const serverStore = makeServerStore();
-
-	// Fetch data and dispatch to store
-	const result = await ShopService.getById(slug);
-
-	if (result.Success && result.Data?.length > 0) {
-		const rawData: {
-			[key: string]: any;
-			id: string;
-			name: string;
-			slug: string;
-		} = result.Data[0];
-		const transformedShop: Shop = {
-			Id: rawData.id,
-			Name: rawData.name,
-			Slug: rawData.slug
-		};
-		serverStore.dispatch(setShopItem(transformedShop));
-		// console.log (`SSR: ${transformedShop}`);
-	}
-
-
-	return serverStore;
-
-}
 
 
 

@@ -1,6 +1,9 @@
-import { ShopLayoutProps } from "@/types/ShopPageProps";
 
-export default async function ThankYouLayout ({ children, params }: ShopLayoutProps) {
+export default async function ThankYouLayout ({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<>
 			{children}

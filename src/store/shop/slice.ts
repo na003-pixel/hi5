@@ -4,21 +4,21 @@ import { Shop, ShopV2 } from '@/types/primitives/Shop';
 import { APIResponse } from '@/types/primitives/ExternalAPIResponse';
 import { ShopState } from '@/types/states/States';
 
-export const fetchShop = createAsyncThunk(
-	'shop/fetch',
-	async (shopId: string) => {
-		const response = await fetch(`/api/shop/${shopId}`);
-		const result: APIResponse<Shop> = await response.json();
+// export const fetchShop = createAsyncThunk(
+// 	'shop/fetch',
+// 	async (shopId: string) => {
+// 		const response = await fetch(`/api/shop/${shopId}`);
+// 		const result: APIResponse<Shop> = await response.json();
 
-		if (!result.Success) {
-			throw new Error(result.Error.Message);
-		}
+// 		if (!result.Success) {
+// 			throw new Error(result.Error.Message);
+// 		}
 
-		console.log(result.Data);
+// 		console.log(result.Data);
 
-		return result.Data;
-	}
-);
+// 		return result.Data;
+// 	}
+// );
 
 
 
@@ -54,32 +54,33 @@ const shopSlice = createSlice({
 			state.Error = null;
 		},
 	},
-	extraReducers: (builder) => {
-		builder
-			.addCase(fetchShop.pending, (state) => {
-				state.IsLoading = true;
-				state.Error = null;
-			})
-			.addCase(fetchShop.fulfilled, (state, action) => {
-				const rawData = action.payload;
+	// extraReducers: (builder) => {
+	// 	builder
+	// 		.addCase(fetchShop.pending, (state) => {
+	// 			state.IsLoading = true;
+	// 			state.Error = null;
+	// 		})
+	// 		.addCase(fetchShop.fulfilled, (state, action) => {
+	// 			const rawData = action.payload;
 
-				// **TRANSFORMATION LOGIC**
-				// Map the incoming lowercase properties to the PascalCase properties of your Shop type.
-				const transformedShop: Shop = {
-					Id: rawData.id,
-					Name: rawData.name,
-					Slug: rawData.slug,
-				};
+	// 			// **TRANSFORMATION LOGIC**
+	// 			// Map the incoming lowercase properties to the PascalCase properties of your Shop type.
+	// 			// @ts-expect-error - correct db record
+	// 			const transformedShop: Shop = {
+	// 				Id: rawData.id,
+	// 				Name: rawData.name,
+	// 				Slug: rawData.slug,
+	// 			};
 
-				state.IsLoading = false;
-				state.Item = transformedShop; // Store the correctly shaped object
-			})
-			.addCase(fetchShop.rejected, (state, action) => {
-				state.IsLoading = false;
-				state.Error = action.error.message || 'Failed to fetch shop';
-			})
+	// 			state.IsLoading = false;
+	// 			state.Item = transformedShop; // Store the correctly shaped object
+	// 		})
+	// 		.addCase(fetchShop.rejected, (state, action) => {
+	// 			state.IsLoading = false;
+	// 			state.Error = action.error.message || 'Failed to fetch shop';
+	// 		})
 
-	},
+	// },
 });
 
 export const { setShopItem, setShopV2Item, clearError, resetShop } = shopSlice.actions;

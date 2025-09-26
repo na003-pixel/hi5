@@ -2,7 +2,6 @@
 
 import { use, useEffect, useState } from 'react';
 import { useAppDispatch } from '@/store/hooks';
-import { fetchShop } from '@/store/shop/slice';
 import { CustomerFeedbackRatingFormV2 } from '@/components/CustomerFeedbackRatingFormV2';
 import { ShopPageProps } from '@/types/props/ShopPageProps';
 import ShopHeaderV2 from '@/components/ShopHeaderV2';

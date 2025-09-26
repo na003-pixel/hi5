@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { buildMarginStyles, buildPaddingStyles } from '@/utils/CSSSpacingGenerator';
 import { AspectRatioConfig, DisplaySizeConfig, ImageSizeConfig } from '@/types/styling/Images';
 import { ImageStylingProps } from '@/types/props/GenericImageStylingProps';
+import { ShopV2 } from '@/types/primitives/Shop';
 
 
 
@@ -145,8 +146,8 @@ export function GenericImageHeader({
 
 	// --- Image Configuration ---
 	const getImageConfig = () => {
-		const imageSrc = src || shop?.Website || '/placeholder.jpg';
-		const imageAlt = alt || (shop?.name ? `Header for ${shop.name}` : 'Shop header');
+		const imageSrc = src || (shop as ShopV2)?.Website || '/placeholder.jpg';
+		const imageAlt = alt || ((shop as ShopV2)?.Name ? `Header for ${(shop as ShopV2).Name}` : 'Shop header');
 
 		const config: any = {
 			src: imageSrc,

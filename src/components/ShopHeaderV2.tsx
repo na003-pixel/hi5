@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAppSelector } from '../store/hooks';
 import { selectShopItem, selectShopLoading, selectShopError } from '../store/shop/selectors';
+import { ShopV2 } from '@/types/primitives/Shop';
 
 
 export default function ShopHeaderV2() {
@@ -41,7 +42,7 @@ export default function ShopHeaderV2() {
 		}
 
 		if (shop?.Name) {
-			return shop.OwnerName;
+			return (shop as ShopV2).OwnerName;
 		}
 
 		return "Shop Not Found";

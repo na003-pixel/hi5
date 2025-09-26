@@ -1,13 +1,19 @@
 import HybridReduxProvider from "@/server/store/HybridReduxProvider";
 import { StoreProvider } from "@/store/StoreProvider";
-import { ShopLayoutProps } from "@/types/props/ShopPageProps";
-import { getServerStoreForShop, getServerStoreForShopV2 } from "@/utils/serverSetShop";
+import { ShopLayoutProps, ShopLayoutPropsV2 } from "@/types/props/ShopPageProps";
+import { getServerStoreForShopV2 } from "@/utils/serverSetShop";
 import React from "react";
 
 
 
 
-export default async function ShopPage({ children, params }: ShopLayoutProps) {
+export default async function ShopPage({
+	children,
+	params,
+}: {
+	children: React.ReactNode;
+	params: Promise<{ slug: string }>;
+}) {
 	const resolvedParams = await params;
 
 	const serverStore = await getServerStoreForShopV2(resolvedParams.slug);
