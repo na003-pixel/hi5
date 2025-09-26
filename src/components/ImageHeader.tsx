@@ -6,7 +6,7 @@ import { useAppSelector } from '../store/hooks';
 import { selectShopItem, selectShopLoading, selectShopError } from '../store/shop/selectors';
 import { Card, CardContent } from './ui/card';
 import { cn } from '@/lib/utils'; // Using `cn` for robust class name merging
-import { Fullscreen } from 'lucide-react';
+import { ShopV2 } from '@/types/primitives/Shop';
 
 
 
@@ -50,8 +50,8 @@ export function ImageHeader({
 		<Card className={containerClasses}>
 			<CardContent className="p-0 relative w-full h-full">
 				<Image
-					src={shop?.Website || '/placeholder.jpg'}
-					alt={shop?.name ? `Header for ${shop.name}` : 'Shop header'}
+					src={(shop as ShopV2)?.Website || '/placeholder.jpg'}
+					alt={(shop as ShopV2)?.Name ? `Header for ${(shop as ShopV2).Name}` : 'Shop header'}
 					fill
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					priority
@@ -152,8 +152,8 @@ export function ImageHeaderV2({
 		<Card className={containerClasses}>
 			<CardContent className="p-0 h-full w-full">
 				<Image
-					src={shop?.Website || '/placeholder.jpg'}
-					alt={shop?.name ? `Header for ${shop.name}` : 'Shop header'}
+					src={(shop as ShopV2)?.Website || '/placeholder.jpg'}
+					alt={(shop as ShopV2)?.Name ? `Header for ${(shop as ShopV2).Name}` : 'Shop header'}
 					width={(size && !fill) ? size.width : undefined}
 					height={(size && !fill) ? size.height : undefined}
 					fill={fill}

@@ -22,7 +22,7 @@ export default function RootLayout({
 
 			<html lang="en">
 				<body
-					className="dark"
+					className=""
 					// className="dark"
 				>
 					{children}

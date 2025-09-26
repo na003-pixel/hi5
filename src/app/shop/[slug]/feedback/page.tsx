@@ -2,7 +2,6 @@
 
 
 import CustomerFeedbackTextForm from "@/components/CustomerFeedbackTextForm";
-import ShopHeader from "@/components/ShopHeader";
 import ShopPage from "../layout";
 import { ShopPageProps } from '@/types/props/ShopPageProps';
 import { use } from "react";
